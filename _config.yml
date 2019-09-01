@@ -52,6 +52,7 @@ defaults:
       path: ""
       type: "posts"
     values:
+      permalink: /blog/:year/:month/:slug
       layout: page
       image: https://via.placeholder.com/1200x800
       show_sidebar: true
