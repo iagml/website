@@ -92,6 +92,23 @@ header.masthead h1{
   }
 }
 
+section.latest-posts {
+  padding: 5rem 0;
+}
+
+section.latest-posts .card {
+  transition: .3s ease-in-out;
+}
+
+section.latest-posts .card:hover {
+  transform: scale(1.04);
+}
+
+section.latest-posts .card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 footer {
   background-color: #2b2b2b !important;
 }
