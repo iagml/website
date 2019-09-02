@@ -2,6 +2,8 @@
 layout: default
 ---
 
-<div>
+{% include header.html image=page.image title=page.title subtitle=page.subtitle %}
+
+<div class="container py-5 page-content">
   {{ content }}
 </div>
