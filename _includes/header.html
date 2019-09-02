@@ -1,0 +1,16 @@
+<header class="masthead text-white text-shadow inner-shadow" {% if include.image %} style="background-image: url('{{ include.image }}')" {% endif %}>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9">
+        {% if include.title %}
+        <h1>{{ include.title }}</h1>
+        {% endif %}
+
+        {% if include.subtitle %}
+        <h2>{{ include.subtitle }}</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>

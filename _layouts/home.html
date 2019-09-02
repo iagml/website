@@ -2,17 +2,8 @@
 layout: default
 ---
 
-<header class="masthead text-white text-shadow inner-shadow">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9">
-        <h1>IAGML</h1>
-        <h2>Sistemas inteligentes para descoberta em Astronomia</h2>
-      </div>
-    </div>
-  </div>
-</header>
+{% include header.html image="/assets/img/iag.png" title="IAGML"
+    subtitle="Sistemas inteligentes para descoberta em Astronomia" %}
 
 <section class="features-icons bg-light text-center">
   <div class="container">
@@ -53,8 +44,8 @@ layout: default
     <div class="text-center">
       <h1 class="text-shadow">S-PLUS</h1>
       <h4 class="text-shadow">Um dos surveys utilizados pelo projeto</h4>
-      <a href="http://www.splus.iag.usp.br" class="btn btn-light" target="_blank">
-        Acesse o site
+      <a href="/surveys" class="btn btn-light">
+        Saiba mais
       </a>
     </div>
   </div>
@@ -76,6 +67,7 @@ layout: default
           do que é feito o Universo? O que são as misteriosas energia escura e matéria escura? Como as galáxias se
           formam e evoluem? Como a Via Láctea se formou e evoluiu?
         </p>
+        <a href="/projeto" class="btn btn-outline-dark">Saiba mais</a>
       </div>
     </div>
   </div>
