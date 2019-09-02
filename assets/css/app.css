@@ -132,6 +132,14 @@ footer li {
   padding-right: .7rem;
 }
 
+footer a {
+  color: inherit;
+}
+
+footer a:hover {
+  color: var(--secondary);
+}
+
 .page-content {
   font-size: 1.2rem;
 }
