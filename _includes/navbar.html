@@ -1,5 +1,24 @@
-<nav class="navbar navbar-light bg-light static-top py-3">
+<nav class="navbar navbar-light bg-light static-top navbar-expand-lg py-3">
   <div class="container">
-    <a class="navbar-brand" href="/">IAGML</a>
+    <a class="navbar-brand" href="/">
+      <img src="/assets/img/iag_logo_black.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      IAGML
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        {% if site.data.navigation %}
+        {% for item in site.data.navigation %}
+        <li class="nav-item {% if item.link == page.url %} active {% endif %}">
+          <a class="nav-link" href="{{ item.link }}">{{ item.name }} <span class="sr-only">(current)</span></a>
+        </li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
   </div>
 </nav>
