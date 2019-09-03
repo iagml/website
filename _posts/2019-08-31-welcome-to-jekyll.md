@@ -1,9 +1,8 @@
 ---
-layout: page
 title:  "Welcome to Jekyll!"
 date:   2019-08-31 20:45:21 -0300
-categories: jekyll update
-image: https://previews.123rf.com/images/vikpit/vikpit1604/vikpit160400034/54976526-welcome-sign-symbol-word-welcome-hand-lettering-calligraphic-font-letters-and-shade-isolated-on-whit.jpg
+image: https://aws1.discourse-cdn.com/standard14/uploads/jekyllrb/original/2X/6/6071cc4b982fd393d892490ed7a702738c595099.png
+author: nmcardoso
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
