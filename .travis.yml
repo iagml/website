@@ -15,7 +15,7 @@ script:
 deploy:
   provider: pages
   local-dir: ./site
-  repo: iagml/website
+  repo: iagml/iagml.github.io
   target-brach: master
   email: deploy@travis-ci.org
   name: Deployment Bot
