@@ -33,10 +33,7 @@ exclude:
   - README.md
   - LICENSE.txt
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor
 
 livereload: true
 
