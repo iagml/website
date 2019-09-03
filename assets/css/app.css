@@ -210,6 +210,11 @@ footer a:hover {
   opacity: 0.84;
 }
 
+.post-content {
+  font-family: 'Spectral', serif;
+  font-size: 1.3rem;
+}
+
 .post-content figcaption {
   font-size: 1rem;
 }
