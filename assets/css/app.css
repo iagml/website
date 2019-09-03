@@ -157,3 +157,20 @@ footer a {
 footer a:hover {
   color: var(--secondary);
 }
+
+#post-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#post-list a, #post-list a .img {
+  transition: .3s ease-in-out;
+}
+
+#post-list a:hover {
+  color: var(--primary);
+}
+
+#post-list a:hover .img {
+  opacity: 0.84;
+}
