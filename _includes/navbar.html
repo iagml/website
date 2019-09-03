@@ -13,7 +13,11 @@
       <ul class="navbar-nav ml-auto">
         {% if site.data.navigation %}
         {% for item in site.data.navigation %}
-        <li class="nav-item {% if item.link == page.url %} active {% endif %}">
+        <li class="nav-item 
+                  {% if (item.link == page.url) or 
+                    (item.name == 'Blog' and page.url contains '/blog/') %} 
+                    active
+                  {% endif %}">
           <a class="nav-link" href="{{ item.link }}">{{ item.name }} <span class="sr-only">(current)</span></a>
         </li>
         {% endfor %}
