@@ -1,0 +1,7 @@
+{% if include.align == 'center' %}
+<figure class="text-center">
+  <img src="{{ include.src }}" alt="{{ include.alt }}" {% if include.width %} width="{{ include.width }}" {% endif %}
+    {% if include.height %} height="{{ include.height }}" {% endif %}>
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>
+{% endif %}
