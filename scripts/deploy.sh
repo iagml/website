@@ -5,4 +5,4 @@ cd site
 git init
 git add .
 git commit -m ":rocket: Deploy to Github Pages"
-git push --force "https://iagml:${GITHUB_TOKEN}@github.com/iagml/iagml.github.io.git" master:master
+git push --force --quiet "https://iagml:${GITHUB_TOKEN}@github.com/iagml/iagml.github.io.git" master:master
