@@ -12,12 +12,13 @@ branches:
 before_script:
   - chmod -R +x scripts/
 
-script:
-  - scripts/build.sh
+script: 
+  - ./scripts/build.sh
 
 deploy:
   provider: script
   skip-cleanup: true
-  script: bash scripts/deploy.sh
+  script: 
+    - ./scripts/deploy.sh
   on:
-    branch: release
+    branch: master
