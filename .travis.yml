@@ -10,17 +10,11 @@ branches:
   - master
 
 script:
-  - JEKYLL_ENV=production bundle exec jekyll build --destination site
+  - scripts/build.sh
 
 deploy:
-  provider: pages
-  local-dir: ./site
-  repo: iagml/iagml.github.io
-  target-brach: master
-  email: deploy@travis-ci.org
-  name: Deployment Bot
+  provider: script
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  #keep-history: true
+  script: bash scripts/deploy.sh
   on:
     branch: release
