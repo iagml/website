@@ -218,3 +218,13 @@ footer a:hover {
 .post-content figcaption {
   font-size: 1rem;
 }
+
+.highlight {
+  font-size: 1rem;
+  overflow-x: auto;
+  margin-bottom: .2rem;
+}
+
+.highlight pre {
+  padding: .9rem 1.4rem;
+}
