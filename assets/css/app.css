@@ -65,24 +65,43 @@ header.masthead h1{
 }
 
 .features-icons{
-  padding-top:7rem;
-  padding-bottom:7rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
 
-.features-icons .features-icons-item{
-  max-width:20rem;
+.features-icons .features-icons-item {
+  max-width: 20rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
-.features-icons .features-icons-item .features-icons-icon{
-  height:7rem;
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
 }
 
-.features-icons .features-icons-item .features-icons-icon i{
-  font-size:4.5rem;
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
 }
 
-.features-icons .features-icons-item:hover .features-icons-icon i{
-  font-size:5rem;
+.features-icons a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.features-icons .features-icons-item {
+  transition: .3s ease-in-out;
+}
+
+.features-icons .features-icons-item i {
+  transition: .3s ease-in-out;
+}
+
+.features-icons .features-icons-item:hover {
+  transform: scale(1.08);
+}
+
+.features-icons .features-icons-item:hover i {
+  color: #06f;
 }
 
 .hero {
