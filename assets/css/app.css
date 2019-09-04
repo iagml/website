@@ -153,6 +153,10 @@ section.latest-posts .card:hover {
   transform: scale(1.04);
 }
 
+section.latest-posts .card:hover h5 {
+  color: var(--primary);
+}
+
 section.latest-posts .card a {
   text-decoration: none;
   color: inherit;
