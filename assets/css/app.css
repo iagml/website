@@ -181,8 +181,18 @@ footer .footer-line {
   padding: 1rem 0;
 }
 
-footer li {
+footer ul.footer-logos li {
   padding-right: .7rem;
+}
+
+@media (max-width: 576px) {
+  footer ul.footer-logos li {
+    padding-bottom: 1.2rem;
+  }
+
+  footer ul.footer-logos li img {
+    height: 32px;
+  }
 }
 
 footer a {
