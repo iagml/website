@@ -35,10 +35,9 @@
       <div class="col-sm-12 col-xl-3">
         <h6>Explore</h6>
         <ul class="list-unstyled">
-          <li><a href="/">Início</a></li>
-          <li><a href="/projeto">Projeto</a></li>
-          <li><a href="/recursos/">Recursos</a></li>
-          <li><a href="/surveys">Surveys</a></li>
+          {% for item in site.data.navigation %}
+          <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="col-sm-12 col-xl-3">
