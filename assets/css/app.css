@@ -25,6 +25,11 @@ table {
   overflow: auto;
 }
 
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+  padding-top: 2rem;
+  padding-bottom: .6rem;
+}
+
 .w-600 {
   font-weight: 600;
 }
