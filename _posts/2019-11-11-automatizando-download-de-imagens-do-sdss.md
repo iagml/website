@@ -31,9 +31,9 @@ Os programas que se comunicam por uma API REST usam o protocolo [HTTP](https://e
 
 No exemplo ilustrado pelo diagama acima, vemos um programa escrito em [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)) se comunicando com um servidor escrito em [Java](https://en.wikipedia.org/wiki/Java_(programming_language)). Este diagrama mostra as principais caracteristica de uma comunicação REST. Vemos que ela é constituída de dois principais eventos: a requisição (Request) e a resposta (Response). 
 
-Na requisição, vemos que a aplicação acessa uma URI do servidor. A primeira parte da URI `http://coolhomes.api.com` é chamada de [endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints) e a segunda parte da URI `/home?limit=5` é chamada de rota. Na rota, o que vemos antes da interrogação é o nome da rota e o que vemos depois são os parâmetros. Fazendo uma analogia, a rota é como se fosse uma função. Neste caso seria como se estivéssemos invocando a função home com parâmetro limite igual a 5  `home(limit=5)`.
+Na requisição, vemos que a aplicação acessa uma URI do servidor. A primeira parte da URI `http://coolhomes.api.com` é chamada de [endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints) e a segunda parte da URI `/home?limit=5` é chamada de rota. Na rota, o que vemos antes da interrogação é o nome da rota e o que vemos depois são os parâmetros. Fazendo uma analogia, a rota é como se fosse uma função. Neste caso seria como se estivéssemos invocando a função *home* com parâmetro *limit* igual a 5  `home(limit=5)`.
 
-Da mesma forma, a resposta seria o retorno da função. Neste caso, a resposta retorna uma lista de casas com informações, como localização e preço, serializadas como [JSON](https://en.wikipedia.org/wiki/JSON).
+Seguindo este mesmo raciocínio, a resposta da API seria o retorno da função. Neste caso, a resposta retorna uma lista de casas com informações, como a localização e o preço, serializadas como [JSON](https://en.wikipedia.org/wiki/JSON).
 
 ## A API do SDSS
 
