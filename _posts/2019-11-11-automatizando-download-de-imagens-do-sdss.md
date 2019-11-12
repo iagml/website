@@ -59,61 +59,65 @@ Para ilustrar nosso problema, vamos fazer algumas **requisições** para API do 
 
 Imagine que temos 3 objetos identificados pela sua sessão reta e declinação, como na tabela abaixo,  e queiramos obter suas respectivas imagens.
 
-<table class="table table-striped text-center">
-  <thead>
-    <tr>
-      <th>Objeto</th>
-      <th>RA</th>
-      <th>DEC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>19.023342</td>
-      <td>-0.014911</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>24.398026</td>
-      <td>-0.135213</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>19.196877</td>
-      <td>-0.103266</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrapper">
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th>Objeto</th>
+        <th>RA</th>
+        <th>DEC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>19.023342</td>
+        <td>-0.014911</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>24.398026</td>
+        <td>-0.135213</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>19.196877</td>
+        <td>-0.103266</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Para todos os objetos usaremos `width=180`, `height=180` e `scale=0.3`. A tabela abaixo mostra a URL de **requisição** com os parâmetros que definimos e sua respectiva **resposta**.
 
-<table class="table table-striped text-center">
-  <thead>
-    <tr>
-      <th>Objeto</th>
-      <th>Resposta</th>
-      <th>Requisição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="align-middle">1</td>
-      <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3"></td>
-      <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3</a></td>
-    </tr>
-    <tr>
-      <td class="align-middle">2</td>
-      <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3"></td>
-      <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3</a></td>
-    </tr>
-    <tr>
-      <td class="align-middle">3</td>
-      <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3"></td>
-      <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrapper">
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th>Objeto</th>
+        <th>Resposta</th>
+        <th>Requisição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="align-middle">1</td>
+        <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3"></td>
+        <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3</a></td>
+      </tr>
+      <tr>
+        <td class="align-middle">2</td>
+        <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3"></td>
+        <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3</a></td>
+      </tr>
+      <tr>
+        <td class="align-middle">3</td>
+        <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3"></td>
+        <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Observando a tabela acima, percebemos que a requisição é composta de dois parâmetros principais: **RA** e **DEC**, e a resposta é uma imagem **jpeg**.
 
