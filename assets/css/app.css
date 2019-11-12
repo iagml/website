@@ -12,6 +12,14 @@ html, body {
   }
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  width: 50% !important;
+}
+
 .page-content {
   font-size: 1.2rem;
   overflow: auto;
