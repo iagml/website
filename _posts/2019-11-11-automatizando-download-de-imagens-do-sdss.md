@@ -176,7 +176,7 @@ batch_download(data)
 
 A imagem abaixo mostra as imagens baixadas pelo programa.
 
-<img src="/assets/img/galaxies.jpg">
+<img src="/assets/img/galaxies.jpg" class="d-block mx-auto" width="800px" style="max-width: 100%">
 
 # Jupyter Notebooks
 
