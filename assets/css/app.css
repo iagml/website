@@ -20,6 +20,11 @@ table {
   width: 50% !important;
 }
 
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .page-content {
   font-size: 1.2rem;
   overflow: auto;
