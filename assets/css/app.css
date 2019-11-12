@@ -255,3 +255,8 @@ footer a:hover {
 .highlight pre {
   padding: .9rem 1.4rem;
 }
+
+.highlight {
+  padding-top: .7rem;
+  padding-bottom: 1.2rem;
+}
