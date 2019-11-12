@@ -128,7 +128,7 @@ Podemos baixar as imagens que desejamos em dois passos:
 
 # Implementação
 
-Primeiro, vamos implementar uma função que recebe os parâmetros recebidos pela rota da API do SDSS e montar nossa URL.
+Primeiro, vamos implementar uma função que recebe os parâmetros aceitos pela rota da API do SDSS e montar nossa URL.
 
 ```py
 def create_request_url(ra, dec, width=200, height=200, scale=.3):
