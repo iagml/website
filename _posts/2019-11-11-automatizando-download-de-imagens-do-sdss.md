@@ -13,7 +13,7 @@ Uma das primeiras etapas para resolução de um problema de machine learning é 
 
 ## Como o SDSS disponibiliza suas imagens?
 
-A forma mais comum de acessar o catálogo de imagens do SDSS é pela página do [SkyServer](https://skyserver.sdss.org/dr15/en/tools/chart/list.aspx), que é uma interface gráfica de usuário ([GUI](https://en.wikipedia.org/wiki/Graphical_user_interface)), ou seja, uma interface entre o servidor e a pessoa, que é feita de forma gráfica. Mas além da interface de usuário, o SDSS disponibiliza uma interface de programação de aplicação ([API](https://en.wikipedia.org/wiki/Application_programming_interface)), que é uma forma do [servidor](https://en.wikipedia.org/wiki/Server_(computing)) se comunicar diretamente com outro programa ([cliente](https://en.wikipedia.org/wiki/Client_(computing))).
+A forma mais comum de acessar o catálogo de imagens do SDSS é pela página do [SkyServer](https://skyserver.sdss.org/dr15/en/tools/chart/list.aspx), que é uma interface gráfica de usuário ([GUI](https://en.wikipedia.org/wiki/Graphical_user_interface)), ou seja, um método onde há interação do usuário com o sistema de forma visual. Mas além da interface de usuário, o SDSS disponibiliza uma interface de programação de aplicação ([API](https://en.wikipedia.org/wiki/Application_programming_interface)), que é uma forma do [servidor](https://en.wikipedia.org/wiki/Server_(computing)) se comunicar diretamente com outro programa ([cliente](https://en.wikipedia.org/wiki/Client_(computing))).
 
 A API do SDSS está documentada [nesta página](http://skyserver.sdss.org/dr15/en/help/docs/api.aspx). Ela disponibiliza mais dados além de images, mas aqui veremos como usá-la para obter imagens.
 
