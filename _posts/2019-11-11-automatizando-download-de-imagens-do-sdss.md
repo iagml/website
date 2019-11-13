@@ -9,7 +9,7 @@ image: /assets/img/galaxies.jpg
 
 Uma das primeiras etapas para resolução de um problema de machine learning é a obtenção dos dados para treinar o modelo. Mas nem sempre os dados estão disponíveis de forma simples. Além disso, como é envolvido grande número de dados, muitas vezes é necessária a obtenção automatizada desses dados. Neste artigo será comentada formas de fazer download de grande quantidade de imagens do SDSS por um script.
 
-<!-- more -->
+<!--more-->
 
 ## Como o SDSS disponibiliza suas imagens?
 
