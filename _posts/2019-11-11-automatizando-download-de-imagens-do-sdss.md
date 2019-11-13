@@ -238,6 +238,6 @@ Um exemplo deste código está disponível no Google Colabs e pode ser acessado 
 
 [Simple SDSS Image Download](https://colab.research.google.com/drive/1tlAH_ZOyezSfHkVTt85aum7n5OgQrCmE) [![Google Colabs](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tlAH_ZOyezSfHkVTt85aum7n5OgQrCmE)
 
-Abaixo tem outro exemplo um pouco mais complexo, mas com performance muito superior pois utiliza [computação concorrente](https://en.wikipedia.org/wiki/Concurrent_computing) para baixar as imagens. Ou seja, ao invés de baixar imagem por imagem, o programa cria vários [processos paralelos](https://en.wikipedia.org/wiki/Multiprocessing) que baixam as imagens [assincronamente](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)). 
+Abaixo tem outro exemplo um pouco mais complexo, mas com performance muito superior pois utiliza [computação concorrente](https://en.wikipedia.org/wiki/Concurrent_computing) para baixar as imagens. Isto é, ao invés de baixar as imagens sequencialmente, esperando uma imagem baixar para depois baixar a próxima, o programa cria vários [processos paralelos](https://en.wikipedia.org/wiki/Multiprocessing) que baixam várias imagens [simultaneamente](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)). 
 
 [SDSS Stamps](https://colab.research.google.com/drive/11aNTyapkYI1drPynZemDG-WhrNPkPMcM) [![Google Colabs](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11aNTyapkYI1drPynZemDG-WhrNPkPMcM)
