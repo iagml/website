@@ -57,7 +57,7 @@ Além disso, vemos que esta URL aceita os seguintes parâmetros:
       <tr>
         <th>Parâmetro</th>
         <th>Descrição</th>
-        <th>Valor padrão</th>
+        <th style="white-space: nowrap;">Valor padrão</th>
       </tr>
     </thead>
     <tbody>
