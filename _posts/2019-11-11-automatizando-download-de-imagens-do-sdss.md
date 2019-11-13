@@ -13,45 +13,91 @@ Uma das primeiras etapas para resolução de um problema de machine learning é 
 
 ## Como o SDSS disponibiliza suas imagens?
 
-A forma mais comum de acessar o catálogo de imagens do SDSS é pela página do [SkyServer](https://skyserver.sdss.org/dr15/en/tools/chart/list.aspx), que é uma interface de usuário ([UI](https://en.wikipedia.org/wiki/User_interface)) para obtenção das imagens, ou seja, uma interface entre o servidor e a pessoa na qual o usuário interage com o servidor de forma gráfica. Mas além da interface de usuário, o SDSS disponibiliza uma interface de programação de aplicação ([API](https://en.wikipedia.org/wiki/Application_programming_interface)), que é uma forma do servidor se comunicar diretamente com outro programa.
+A forma mais comum de acessar o catálogo de imagens do SDSS é pela página do [SkyServer](https://skyserver.sdss.org/dr15/en/tools/chart/list.aspx), que é uma interface gráfica de usuário ([GUI](https://en.wikipedia.org/wiki/Graphical_user_interface)), ou seja, uma interface entre o servidor e a pessoa, que é feita de forma gráfica. Mas além da interface de usuário, o SDSS disponibiliza uma interface de programação de aplicação ([API](https://en.wikipedia.org/wiki/Application_programming_interface)), que é uma forma do [servidor](https://en.wikipedia.org/wiki/Server_(computing)) se comunicar diretamente com outro programa ([cliente](https://en.wikipedia.org/wiki/Client_(computing))).
 
-A API do SDSS está documentada [nesta página](http://skyserver.sdss.org/dr15/en/help/docs/api.aspx). Ela disponibiliza mais dados além de images, mas aqui veremos como usá-la para fazer nosso programa se comunicar diretamente com o servidor do SDSS para obter imagens.
+A API do SDSS está documentada [nesta página](http://skyserver.sdss.org/dr15/en/help/docs/api.aspx). Ela disponibiliza mais dados além de images, mas aqui veremos como usá-la para obter imagens.
 
 ## Como funciona uma API?
 
 Simplificadamente, o funcionamento de uma API é análogo ao de uma função. A diferença é que você não está invocando uma função do seu programa, mas de um outro programa, escrito em outra linguagem e executado em outro computador. Sendo assim, você precisa chamar essa função pela internet.
 
-Mas como é possível executar uma função escrita em outra linguagem e executando em outro computador? Isso é possível porque os pragramas que são projetados para comunicar com outros programas usam um padrão de comunicação. No caso do SDSS, é implementada uma arquitetura de software chamada [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), que é a mais comumente usada para esta finalidade.
+*Mas como é possível executar uma função escrita em outra linguagem e executando em outro computador?* Isso é possível porque os programas que são projetados para comunicar com outros programas usam um padrão de comunicação. No caso do SDSS, é implementada uma arquitetura de software chamada [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), que é a mais uma das mais comuns usadas para esta finalidade.
 
-Os programas que se comunicam por uma API REST usam o protocolo [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) para trocar informações. Assim, para que um programa executar uma determinada função no servidor, basta que acesse uma [URL](https://en.wikipedia.org/wiki/URL). Cada URL do servidor representa uma função, nela também é possível passar parâmetros. Isso também é chamada de *Rota da API*.
+Os programas que se comunicam por uma API REST usam o protocolo [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) para trocar informações. Assim, para que um programa executar uma determinada função no servidor, basta que acesse uma [URL](https://en.wikipedia.org/wiki/URL). Cada URL do servidor representa uma função, que também pode ser chamada de [endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints).
 
 ## Mecanismo de uma API
 
 <img src="https://idratherbewritingmedia.com/images/api/restapi_restapi.svg" width="600px" style="max-width:100%;" class="mx-auto d-block">
 
-No exemplo ilustrado pelo diagama acima, vemos um programa escrito em [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)) se comunicando com um servidor escrito em [Java](https://en.wikipedia.org/wiki/Java_(programming_language)). Este diagrama mostra as principais caracteristica de uma comunicação REST. Vemos que ela é constituída de dois principais eventos: a requisição (Request) e a resposta (Response). 
+No exemplo ilustrado pelo diagama acima, vemos um programa escrito em [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)) se comunicando com um servidor escrito em [Java](https://en.wikipedia.org/wiki/Java_(programming_language)). Este diagrama mostra as principais características de uma comunicação REST. Vemos que ela é constituída de dois principais eventos: a **requisição** (Request) e a **resposta** (Response). 
 
-Na requisição, vemos que a aplicação acessa uma URI do servidor. A primeira parte da URI `http://coolhomes.api.com` é chamada de [endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints) e a segunda parte da URI `/home?limit=5` é chamada de rota. Na rota, o que vemos antes da interrogação é o nome da rota e o que vemos depois são os parâmetros. Fazendo uma analogia, a rota é como se fosse uma função. Neste caso seria como se estivéssemos invocando a função *home* com parâmetro *limit* igual a 5  `home(limit=5)`.
+Na requisição, observamos que a aplicação acessa uma URI do servidor. A primeira parte da URI `http://coolhomes.api.com` é chamada de caminho base (*base path*) e a segunda parte `/home?limit=5` é a *rota*. Na rota, o que vemos antes da interrogação é seu nome e depois são seus parâmetros. O *endpoint* é o ponto final de um canal de comunicação, ou seja, é a URL acessada para executar alguma função no servidor. No diagrama acima, o *endpoint* é `http://coolhomes.api.com/home`. 
 
-Seguindo este mesmo raciocínio, a resposta da API seria o retorno da função. Neste caso, a resposta retorna uma lista de casas com informações, como a localização e o preço, serializadas como [JSON](https://en.wikipedia.org/wiki/JSON).
+Se considerarmos que, ao acessar uma URL, o servidor executa uma função específica, então um *endpoint* é o endereço de uma função na rede. Desta maneira, acessar a URL `http://coolhomes.api.com/home?limit=5` seria como invocar uma função *home* com o parâmetro *limit* igual a 5: `home(limit=5)`.
+
+Uma API pode retornar diversos tipos de repostas (que é o retorno da função executada internamente no servidor). Na arquitetura REST, os objetos retornados são comumente serializados como [JSON](https://en.wikipedia.org/wiki/JSON), que é a representação do objeto na forma de uma *string*. Desta forma, o cliente consegue receber e interpretar tipos de dados arbitrários independentemente da linguagem de programação utilizada.
+
+<div class="alert alert-info">
+  Alguns autores definem <b>endpoint</b> como a função executada internamente pelo servidor quando recebe a chamada de alguma rota. Mas, considerando que um <i>endpoint</i> é o ponto terminal de um canal de comunicação, ambas as definições podem ser usadas, pois, do lado o cliente, o ponto final é a URL e, do lado do servidor, é a função.
+</div>
+
+Além disso, notamos que o fluxo de comunicação entre dois sistemas é: o cliente acessa uma URL, isso faz com que o servidor execute a função relacionada àquela rota e retorne a resposta para o cliente.
 
 ## A API do SDSS
 
-Depois desta breve introdução sobre API's, queremos agora saber como usamos a API do SDSS para obter as imagens. Lendo a documentação do SDSS vemos que devemos usar os seguintes valores para endpoint e rota: 
+Depois desta breve introdução sobre API's, queremos agora saber como usamos a API do SDSS para obter as imagens. Lendo a documentação do SDSS, vemos que devemos usar o seguinte endereço para o  *endpoint*:
 
-- **endpoint**: `http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout`
-- **rota**: `/getJpeg`
+- **endpoint**: `http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getJpeg`
 
-Além disso, vemos que esta rota aceita os seguintes parâmetros:
+Além disso, vemos que esta URL aceita os seguintes parâmetros:
 
-- **Ra**: Right Ascention in degrees
-- **Dec**: Declination in degrees
-- **scale**: Scale of image in arsec per pixel, 0.4 is default
-- **height**: in pixels
-- **width**: in pixels
-- **opt**: a string of characters for overlays on image (details below). This is an optional parameter
+<div class="table-wrapper">
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th>Parâmetro</th>
+        <th>Descrição</th>
+        <th>Valor padrão</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ra</td>
+        <td>Sessão Reta (em graus)</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>dec</td>
+        <td>Declinação (em graus)</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>scale</td>
+        <td>Escala da imagem (em arsec por pixel)</td>
+        <td>0.4</td>
+      </tr>
+      <tr>
+        <td>height</td>
+        <td>Altura da imagem (em pixels)</td>
+        <td>512</td>
+      </tr>
+      <tr>
+        <td>width</td>
+        <td>Largura da imagem (em pixels)</td>
+        <td>512</td>
+      </tr>
+      <tr>
+        <td>opt</td>
+        <td>Uma string com as overlays que serão carregadas sobre a imagem</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-Aqui neste exemplo usaremos os 5 primeiros parâmetros, o sexto parâmetro `opt` são as overlays que você pode opcionalmente carregar nas imagens, são as mesmas disponíveis quando se obtem as imagens pelo SkyServer.
+Os parâmtros **ra** e **dec** são obrigatórios, já os demais são opcionais, visto que têm um valor padrão.
+
+Neste exemplo, usaremos os 5 primeiros parâmetros, o sexto parâmetro `opt` são as overlays que podem ser opcionalmente carregadas nas imagens, são as mesmas overlays disponíveis quando se obtém as imagens pelo site do SkyServer.
 
 ## Exemplo de requisições
 
@@ -130,19 +176,23 @@ Podemos baixar as imagens que desejamos em dois passos:
 - Iterar sobre uma [coleção](https://en.wikipedia.org/wiki/Collection_(abstract_data_type)) de dados (DataFrame, Lista, etc.) e montar as URL's para fazer a requisição.
 - Salvar a resposta da API (imagem) no disco.
 
+<div class="alert alert-info">
+  Aqui usaremos a linguagem <b>Python</b> para escrever nosso programa, mas ele poderia ser escrito em qualquer linguagem de programação que tenha uma biblioteca de abstração da camada de rede para enviar e receber pacotes usando o protocolo HTTP.
+</div>
+
 # Implementação
 
 Primeiro, vamos implementar uma função que recebe os parâmetros aceitos pela rota da API do SDSS e montar nossa URL.
 
 ```py
 def create_request_url(ra, dec, width=200, height=200, scale=.3):
-  ROUTE = 'http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg'
-  return f'{ROUTE}?ra={ra}&dec={dec}&width={width}&height={height}&scale={scale}'
+  ENDPOINT = 'http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg'
+  return f'{ENDPOINT}?ra={ra}&dec={dec}&width={width}&height={height}&scale={scale}'
 ```
 
 A função `create_request_url` possui dois parâmetros obrigatórios: **ra** e **dec**. Os demais são opicionais.
 
-Agora vamos implementar uma função que receba uma URL, faça a *requisição* e salve a *resposta* (imagem) no disco. Para isso, vamos utilizar a biblioteca `requests` do python.
+Agora vamos implementar uma função que receba uma URL, faça a *requisição* e salve a *resposta* (imagem) no disco. Para isso, vamos utilizar a biblioteca [requests](https://requests.readthedocs.io/en/master/), que é responsável pelo envio e recebimento de pacotes através da rede.
 
 ```py
 import requests
@@ -169,7 +219,7 @@ def batch_download(df):
     download_image(url, filename)
 ```
 
-A função `batch_download` itera sobre um DataFrame e faz chamadas em batelada da função `download_image` até que todos os objetos estejem baixados.
+A função `batch_download` itera sobre um DataFrame e chama a função `download_image` para cada objeto da coleção recebida como parâmetro.
 
 Para ilustrar este exemplo, vamos usar um dataset de amostra com 50 objetos. Estes dados estão num arquivo CSV que contém os dados de RA e DEC de cada objeto. O trecho de código abaixo carrega o dataset e chama a função `batch_download`, nossa função principal.
 
@@ -180,7 +230,7 @@ batch_download(data)
 
 A imagem abaixo mostra as imagens baixadas pelo programa.
 
-<img src="/assets/img/galaxies.jpg" class="d-block mx-auto" width="800px" style="max-width: 100%">
+<img src="/assets/img/galaxies.jpg" class="d-block mx-auto" width="860px" style="max-width: 100%">
 
 # Jupyter Notebooks
 
