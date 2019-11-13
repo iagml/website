@@ -54,6 +54,7 @@ defaults:
       layout: post
       image: https://via.placeholder.com/1200x800
       show_sidebar: true
+      excerpt_separator: <!--more-->
 
 include: ['_pages']
 

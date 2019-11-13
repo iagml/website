@@ -19,6 +19,9 @@ layout: default
           </div>
           <h3 class="mt-3">{{ post.title }}</h3>
         </a>
+        <p class="mt-0 mb-3">
+          {{ post.excerpt | strip_html }}
+        </p>
         <div class="row">
           <div class="col-8">
             <spam class="small">
