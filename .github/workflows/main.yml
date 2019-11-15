@@ -1,0 +1,48 @@
+name: Jekyll
+
+on: [push]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6.x'
+    - uses: actions/cache@v1
+      id: cache
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-${{ hashFiles('Gemfile.lock') }}
+    
+    # Pre-build
+    - name: Install Bundler
+      run: |
+        gem install bundler -v '2.0.2'
+    
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        bundle install --deployment
+    
+    # Build
+    - name: Build
+      run: |
+      export PATH=`pwd`/vendor/bundle/ruby/2.6.0/bin:$PATH
+      export GEM_PATH=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_PATH
+      export GEM_HOME=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_HOME
+      JEKYLL_ENV=production bundle exec jekyll build --destination site
+    
+    # Deploy to GH Pages
+    - name: Deploy
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "Github Actions Deploy"
+        cd site
+        git init
+        git add .
+        git commit --quiet -m ":rocket: Deploy to Github Pages"
+        git push --force --quiet "https://nmcardoso:${{ secrets.IAGML_GH_ACTIONS_TOKEN }}@github.com/iagml/iagml.github.io.git" master:master
+        
