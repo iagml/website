@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: 'assets/uploads'
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    label_singular: 'Post'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Publish Date'
+        name: 'date'
+        widget: 'datetime'
+      - label: 'Header Image'
+        name: 'image'
+        widget: 'image'
+        media_library:
+          config:
+            multiple: false
+      - label: 'Author'
+        name: 'author'
+        widget: 'relation'
+        collection: 'authors'
+        displayFields: [display_name]
+        searchFields: [name, display_name]
+        valueField: 'name'
+      - label: 'Body'
+        name: 'body' 
+        widget: 'markdown'
+  - name: 'pages'
+    label: 'Pages'
+    label_singular: 'Page'
+    folder: '_pgs/'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - label: 'Layout'
+        name: 'layout'
+        widget: 'hidden'
+        default: 'page'
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Header Image'
+        name: 'image'
+        widget: 'image'
+        media_library:
+          config:
+            multiple: false
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+  - name: 'authors'
+    label: 'Authors'
+    label_singular: 'Author'
+    identifier_field: name
+    folder: '_authors/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Github Username', name: 'name', widget: 'string' }
+      - { label: 'Diplay Name', name: 'display_name', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

@@ -3,12 +3,15 @@ layout: default
 ---
 
 {% include header.html image=page.image title=page.title subtitle=page.subtitle %}
+{% assign author = site.authors | where: 'name', page.author | first %}
 
 <div class="container pt-3 pb-5 post-content">
   <div class="pb-5 d-flex justify-content-between">
     <div class="d-flex align-items-center">
-      <img src="https://github.com/{{ page.author }}.png?size=50" width="50" class="rounded-circle" alt="">
-      <span class="pl-2">{{ site.data.authors[page.author].name }}</span>
+      <a href="/authors/{{ page.author }}">
+        <img src="https://github.com/{{ page.author }}.png?size=50" width="50" class="rounded-circle" alt="">
+      </a>
+      <span class="pl-3"><a class="post-author" href="/authors/{{ page.author }}">{{ author.display_name }}</a></span>
     </div>
     <div>
       <span class="small"><i class="far fa-calendar-alt"></i> {{ page.date | date_to_string}}</span>

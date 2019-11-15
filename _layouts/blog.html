@@ -8,6 +8,7 @@ layout: default
       <h3>Últimas Postagens</h3>
 
       {% for post in paginator.posts %}
+      {% assign author = site.authors | where: 'name', post.author | first %}
       <div class="py-4">
         <a href="{{ post.url }}">
           <div style="background-image: url({{ post.image }});
@@ -25,7 +26,7 @@ layout: default
         <div class="row">
           <div class="col-8">
             <spam class="small">
-              <i class="far fa-user"></i> {{ site.data.authors[post.author].name }}
+              <i class="far fa-user"></i> <a href="/authors/{{ post.author }}">{{ author.display_name }}</a>
             </spam>
           </div>
           <div class="col-4 text-right">

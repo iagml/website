@@ -55,6 +55,13 @@ defaults:
       image: https://via.placeholder.com/1200x800
       show_sidebar: true
       excerpt_separator: <!--more-->
+  -
+    scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+      permalink: "/authors/:title/"
 
 include: ['_pages']
 
@@ -64,3 +71,6 @@ collections:
     layout: page
     show_sidebar: true
     permalink: /:name/
+  authors:
+    output: true
+    layout: author
