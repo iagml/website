@@ -221,7 +221,7 @@ def batch_download(df):
 
 A função `batch_download` itera sobre um DataFrame e chama a função `download_image` para cada objeto da coleção recebida como parâmetro.
 
-Para ilustrar este exemplo, vamos usar um dataset de amostra com 50 objetos. Estes dados estão num arquivo CSV que contém os dados de RA e DEC de cada objeto. O trecho de código abaixo carrega o dataset e chama a função `batch_download`, nossa função principal.
+Para ilustrar este exemplo, vamos usar um dataset de amostra com 50 objetos. Estes dados estão num arquivo CSV que contém informações de RA e DEC de cada objeto. O trecho de código abaixo carrega o dataset e chama a função `batch_download`, nossa função principal.
 
 ```py
 data = pd.read_csv('https://iagml.github.io/assets/example_data.csv')
