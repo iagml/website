@@ -228,7 +228,7 @@ data = pd.read_csv('https://iagml.github.io/assets/example_data.csv')
 batch_download(data)
 ```
 
-A imagem abaixo mostra as imagens baixadas pelo programa.
+A figura abaixo mostra as imagens baixadas pelo programa.
 
 <img src="/assets/img/galaxies.jpg" class="d-block mx-auto" width="860px" style="max-width: 100%">
 
