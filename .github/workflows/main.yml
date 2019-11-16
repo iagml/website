@@ -39,7 +39,7 @@ jobs:
     - name: Deploy
       run: |
         git config --global user.email "actions@github.com"
-        git config --global user.name "Github Actions Deploy"
+        git config --global user.name "Github Actions"
         cd site
         git init
         git add .
