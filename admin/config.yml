@@ -71,3 +71,19 @@ collections:
       - { label: 'Github Username', name: 'name', widget: 'string' }
       - { label: 'Diplay Name', name: 'display_name', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'menus'
+    label: 'Menus'
+    label_singular: 'Menu'
+    editor:
+      preview: false
+    files:
+      - label: 'Menu Principal'
+        name: 'navigation'
+        file: '_data/navigation.yaml'
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - {label: Title, name: name, widget: string}
+              - {label: Url, name: link, widget: string}
