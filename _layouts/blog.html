@@ -40,7 +40,15 @@ layout: default
       {% endfor %}
     </div>
     <div class="col-md-4">
-      <h3>Categorias</h3>
+      <h3 class="pb-3">Autores</h3>
+      <ul class="list-unstyled">
+        {% for author in site.authors %}
+        <li class="mt-2">
+          <a class="text-dark" href="/authors/{{ author.name }}"><i
+              class="fas fa-pen mr-2"></i>{{ author.display_name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>
