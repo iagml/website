@@ -148,18 +148,18 @@ Para todos os objetos usaremos `width=180`, `height=180` e `scale=0.3`. A tabela
     <tbody>
       <tr>
         <td class="align-middle">1</td>
-        <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3"></td>
-        <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3</a></td>
+        <td class="align-middle"><img src="https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3"></td>
+        <td class="align-middle"><a href="https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3">https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.023342&dec=-0.014911&width=180&height=180&scale=.3</a></td>
       </tr>
       <tr>
         <td class="align-middle">2</td>
-        <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3"></td>
-        <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3</a></td>
+        <td class="align-middle"><img src="https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3"></td>
+        <td class="align-middle"><a href="https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3">https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=24.398026&dec=-0.135213&width=180&height=180&scale=.3</a></td>
       </tr>
       <tr>
         <td class="align-middle">3</td>
-        <td class="align-middle"><img src="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3"></td>
-        <td class="align-middle"><a href="http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3">http://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3</a></td>
+        <td class="align-middle"><img src="https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3"></td>
+        <td class="align-middle"><a href="https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3">https://skyserver.sdss.org/dr15/SkyServerWS/ImgCutout/getjpeg?ra=19.196877&dec=-0.103266&width=180&height=180&scale=.3</a></td>
       </tr>
     </tbody>
   </table>
