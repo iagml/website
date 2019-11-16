@@ -21,7 +21,7 @@ A API do SDSS está documentada [nesta página](http://skyserver.sdss.org/dr15/e
 
 Simplificadamente, o funcionamento de uma API é análogo ao de uma função. A diferença é que você não está invocando uma função do seu programa, mas de um outro programa, escrito em outra linguagem e executado em outro computador. Sendo assim, você precisa chamar essa função pela internet.
 
-*Mas como é possível executar uma função escrita em outra linguagem e executando em outro computador?* Isso é possível porque os programas que são projetados para comunicar com outros programas usam um padrão de comunicação. No caso do SDSS, é implementada uma arquitetura de software chamada [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), que é a mais uma das mais comuns usadas para esta finalidade.
+*Mas como é possível executar uma função escrita em outra linguagem e executando em outro computador?* Isso é possível porque os programas que são projetados para comunicar com outros programas usam um padrão de comunicação. No caso do SDSS, é implementada uma arquitetura de software chamada [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), que é uma das mais comuns usadas para esta finalidade.
 
 Os programas que se comunicam por uma API REST usam o protocolo [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) para trocar informações. Assim, para que um programa executar uma determinada função no servidor, basta que acesse uma [URL](https://en.wikipedia.org/wiki/URL). Cada URL do servidor representa uma função, que também pode ser chamada de [endpoint](https://en.wikipedia.org/wiki/Web_API#Endpoints).
 
