@@ -82,7 +82,7 @@ collections:
         file: '_data/navigation.yaml'
         fields:
           - label: Items
-            name: items
+            name: name
             widget: list
             fields:
               - {label: Title, name: name, widget: string}
