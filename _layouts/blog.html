@@ -43,9 +43,11 @@ layout: default
       <h3 class="pb-3">Autores</h3>
       <ul class="list-unstyled">
         {% for author in site.authors %}
+        {% assign count = site.posts | where: 'author', author.name | size %}
         <li class="mt-2">
           <a class="text-dark" href="/authors/{{ author.name }}"><i
               class="fas fa-pen mr-2"></i>{{ author.display_name }}</a>
+          <span class="text-muted"> &bullet; {{ count }} {{ count | pluralize: 'post', 'posts' }}</span>
         </li>
         {% endfor %}
       </ul>
