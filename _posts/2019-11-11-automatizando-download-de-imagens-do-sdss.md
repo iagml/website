@@ -2,7 +2,7 @@
 title: "Automatizando o download de imagens do SDSS"
 author: nmcardoso
 date: 2019-11-11
-image: /assets/img/galaxies.jpg
+image: /assets/uploads/galaxy_grid.jpg
 ---
 
 # Introdução
@@ -230,7 +230,7 @@ batch_download(data)
 
 A figura abaixo mostra as imagens baixadas pelo programa.
 
-<img src="/assets/img/galaxies.jpg" class="d-block mx-auto" width="860px" style="max-width: 100%">
+<img src="/assets/uploads/galaxy_grid.jpg" class="d-block mx-auto" width="860px" style="max-width: 100%">
 
 # Jupyter Notebooks
 
