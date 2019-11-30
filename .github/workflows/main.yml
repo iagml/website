@@ -40,7 +40,7 @@ jobs:
       run: |
         echo $PATH
         ls ~/.local/bin
-        jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
+        ~/.local/bin/jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
 
     - name: Install Dependencies
       if: steps.gemcache.outputs.cache-hit != 'true'
