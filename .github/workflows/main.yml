@@ -34,13 +34,13 @@ jobs:
     - name: Install Python Dependencies
       if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
-        pip install -r requirements.txt --user
+        pip install -r requirements.txt
 
     - name: Compile Jupyter Notebooks
       run: |
         echo $PATH
         ls ~/.local/bin
-        # jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
+        jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
 
     - name: Install Dependencies
       if: steps.gemcache.outputs.cache-hit != 'true'
