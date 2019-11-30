@@ -31,11 +31,6 @@ jobs:
       run: |
         gem install bundler -v '2.0.2'
     
-    - name: Install Dependencies
-      if: steps.gemcache.outputs.cache-hit != 'true'
-      run: |
-        bundle install --deployment
-    
     - name: Install Python Dependencies
       if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
@@ -46,6 +41,11 @@ jobs:
         echo $PATH
         echo ls ~/.local/bin
         # jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
+
+    - name: Install Dependencies
+      if: steps.gemcache.outputs.cache-hit != 'true'
+      run: |
+        bundle install --deployment
     
     # Build
     - name: Build
