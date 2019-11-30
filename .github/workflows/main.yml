@@ -38,7 +38,6 @@ jobs:
 
     - name: Compile Jupyter Notebooks
       run: |
-        ls -l ~/.cache/pip
         ~/.local/bin/jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
 
     # Build
