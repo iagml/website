@@ -38,7 +38,7 @@ jobs:
 
     - name: Compile Jupyter Notebooks
       run: |
-        ~/.local/bin/jupyter nbconvert --to html --template jupyter.tpl --log-level CRITICAL notebooks/*.ipynb
+        ~/.local/bin/jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
 
     # Build
     - name: Build
