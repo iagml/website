@@ -11,11 +11,11 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6.x'
-    - uses: actions/cache@v1
-      id: pipcache
-      with:
-        path: .pip-cache
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+    # - uses: actions/cache@v1
+    #   id: pipcache
+    #   with:
+    #     path: .pip-cache
+    #     key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
     - uses: actions/cache@v1
       id: gemcache
       with:
@@ -32,16 +32,9 @@ jobs:
       run: |
         bundle install --deployment
     
-    - name: Install Python Dependencies (Download)
-      if: steps.pipcache.outputs.cache-hit != 'false'
+    - name: Install Python Dependencies
       run: |
-        pip install --no-install --use-mirrors --download .pip-cache -r requirements.txt
-
-    - name: Install Python Dependencies (Cached)
-      if: steps.pipcache.outputs.cache-hit == 'true'
-      run: |
-        ls .pip-cache
-        pip install -r requirements.txt --no-index --find-links .pip-cache --user
+        pip install -r requirements.txt --user
 
     - name: Compile Jupyter Notebooks
       run: |
