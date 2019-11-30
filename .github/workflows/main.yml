@@ -14,7 +14,7 @@ jobs:
     - uses: actions/cache@v1
       id: pipcache
       with:
-        path: ~/cache/pip
+        path: .pip-cache
         key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
     - uses: actions/cache@v1
       id: gemcache
@@ -35,13 +35,13 @@ jobs:
     - name: Install Python Dependencies (Download)
       if: steps.pipcache.outputs.cache-hit != 'false'
       run: |
-        pip install -r requirements.txt -t ~/cache/pip --user
+        pip install -r requirements.txt -t .pip-cache --user
 
     - name: Install Python Dependencies (Cached)
       if: steps.pipcache.outputs.cache-hit == 'true'
       run: |
         ls ~/cache/pip
-        pip install -r requirements.txt --no-index --find-links ~/cache/pip --user
+        pip install -r requirements.txt --no-index --find-links .pip-cache --user
 
     - name: Compile Jupyter Notebooks
       run: |
