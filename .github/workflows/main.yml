@@ -39,7 +39,7 @@ jobs:
     - name: Compile Jupyter Notebooks
       run: |
         echo $PATH
-        echo ls ~/.local/bin
+        ls ~/.local/bin
         # jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
 
     - name: Install Dependencies
