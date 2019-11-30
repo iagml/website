@@ -39,7 +39,7 @@ jobs:
 
     - name: Compile Jupyter Notebooks
       run: |
-        ~/.local/bin/jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
+        jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
 
     # Build
     - name: Build
