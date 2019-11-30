@@ -32,15 +32,15 @@ jobs:
       run: |
         bundle install --deployment
     
-    - name: Install Python Dependencies
+    - name: Install Python Dependencies (Download)
       if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
         pip install -r requirements.txt -d ~/cache/pip --user
 
-    - name: Install Python Dependencies
+    - name: Install Python Dependencies (Cached)
       if: steps.pipcache.outputs.cache-hit == 'true'
       run: |
-        pip install -r requirements.txt --find-links=~/cache/pip --user
+        pip install -r requirements.txt --no-index --find-links ~/cache/pip --user
 
     - name: Compile Jupyter Notebooks
       run: |
