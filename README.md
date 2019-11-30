@@ -10,7 +10,8 @@
 
 ## Sobre
 
-Repositório do site [IAGML](https://iagml.github.io): Sistemas inteligentes para descoberta em Astronomia.
+Repositório do site IAGML: Sistemas inteligentes para descoberta em Astronomia.
+Acesse o site neste link: [iagml.github.io](https://iagml.github.io)
 
 ## License
 
