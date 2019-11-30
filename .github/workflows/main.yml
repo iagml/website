@@ -40,6 +40,7 @@ jobs:
     - name: Install Python Dependencies (Cached)
       if: steps.pipcache.outputs.cache-hit == 'true'
       run: |
+        ls ~/cache/pip
         pip install -r requirements.txt --no-index --find-links ~/cache/pip --user
 
     - name: Compile Jupyter Notebooks
