@@ -12,10 +12,19 @@ jobs:
       with:
         ruby-version: '2.6.x'
     - uses: actions/cache@v1
-      id: cache
+      id: pipcache
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - uses: actions/cache@v1
+      id: gemcache
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-${{ hashFiles('Gemfile.lock') }}
+        key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gem-
     
     # Pre-build
     - name: Install Bundler
@@ -23,9 +32,18 @@ jobs:
         gem install bundler -v '2.0.2'
     
     - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.gemcache.outputs.cache-hit != 'true'
       run: |
         bundle install --deployment
+    
+    - name: Install Python Dependencies
+      if: steps.pipcache.outputs.cache-hit != 'true'
+      run: |
+        pip install -r requirements.txt --user
+
+    - name: Compile Jupyter Notebooks
+      run: |
+        jupyter nbconvert --to html --template jupyter.tpl notebooks/*.ipynb
     
     # Build
     - name: Build
