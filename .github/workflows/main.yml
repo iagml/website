@@ -35,12 +35,12 @@ jobs:
     - name: Install Python Dependencies (Download)
       if: steps.pipcache.outputs.cache-hit != 'false'
       run: |
-        pip install -r requirements.txt -t .pip-cache --user
+        pip install --no-install --use-mirrors --download .pip-cache -r requirements.txt
 
     - name: Install Python Dependencies (Cached)
       if: steps.pipcache.outputs.cache-hit == 'true'
       run: |
-        ls ~/cache/pip
+        ls .pip-cache
         pip install -r requirements.txt --no-index --find-links .pip-cache --user
 
     - name: Compile Jupyter Notebooks
