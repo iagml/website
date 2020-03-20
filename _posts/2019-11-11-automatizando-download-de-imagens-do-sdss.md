@@ -63,7 +63,7 @@ Além disso, vemos que esta URL aceita os seguintes parâmetros:
     <tbody>
       <tr>
         <td>ra</td>
-        <td>Sessão Reta (em graus)</td>
+        <td>Ascensão Reta (em graus)</td>
         <td>-</td>
       </tr>
       <tr>
@@ -103,7 +103,7 @@ Neste exemplo, usaremos os 5 primeiros parâmetros, o sexto parâmetro `opt` sã
 
 Para ilustrar nosso problema, vamos fazer algumas **requisições** para API do SDSS para ver qual sua **resposta**.
 
-Imagine que temos 3 objetos identificados pela sua sessão reta e declinação, como na tabela abaixo,  e queiramos obter suas respectivas imagens.
+Imagine que temos 3 objetos identificados pela sua ascensão reta e declinação, como na tabela abaixo,  e queiramos obter suas respectivas imagens.
 
 <div class="table-wrapper">
   <table class="table table-striped text-center">
