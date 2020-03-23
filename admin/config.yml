@@ -36,6 +36,7 @@ collections:
         name: 'body' 
         widget: 'markdown'
       - label: 'Attachments'
+        name: ''
         widget: 'file'
         media_library:
           config:
