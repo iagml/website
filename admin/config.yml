@@ -78,4 +78,5 @@ collections:
       - label: 'Description'
         name: 'body'
         required: false
+        hint: 'Short description about you, like social media links and qualification. Will be visible on your author page.'
         widget: 'markdown'
