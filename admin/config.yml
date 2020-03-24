@@ -35,12 +35,6 @@ collections:
       - label: 'Body'
         name: 'body' 
         widget: 'markdown'
-      - label: 'Attachments'
-        name: ''
-        widget: 'file'
-        media_library:
-          config:
-            multiple: true
   - name: 'pages'
     label: 'Pages'
     label_singular: 'Page'
