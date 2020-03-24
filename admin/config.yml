@@ -75,6 +75,6 @@ collections:
       - label: 'Diplay Name'
         name: 'display_name'
         widget: 'string'
-      - label: 'Body'
+      - label: 'Description'
         name: 'body'
         widget: 'markdown'
