@@ -12,9 +12,10 @@
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
     function getFilename(path) {
-      const filenameRegex = /(\/.*\/)(.*)\.ipynb/gm
-      const filenameMatch = path.match(filenameRegex)
-      return filenameMatch ? filenameMatch[2] : ''
+      const file = path.split('/').pop()
+      const filename = file.slice(0, file.lastIndexOf('.'))
+      console.log('Filename: ', filename, file)
+      return filename
     }
 
     CMS.registerEditorComponent({
