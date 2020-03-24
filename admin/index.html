@@ -34,7 +34,7 @@
       // Function to extract data elements from the regexp match
       fromBlock: function (match) {
         return {
-          id: match[1]
+          id: '/assets/uploads/' + match[1] + '.ipynb'
         }
       },
       // Function to create a text block from an instance of this component
