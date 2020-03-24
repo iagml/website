@@ -11,6 +11,14 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
+    function getFilename(path) {
+      const filenameRegex = /(\/.*\/)(.*)\.ipynb/gm
+      const filenameMatch = path.match(filenameRegex)
+      return {
+        id: filenameMatch ? filenameMatch[2] : ''
+      }
+    }
+
     CMS.registerEditorComponent({
       // Internal id of the component
       id: "jupyter_notebook",
@@ -22,28 +30,19 @@
       pattern: /^{{\s*?"([\w-.]*)"\s*?\|\s*?\w+\s*?}}$/,
       // Function to extract data elements from the regexp match
       fromBlock: function (match) {
-        const id = match[1]
-        if (!id) {
-          return {
-            id: ''
-          }
-        }
-
-        const filenameRegex = /(\/.*\/)(.*)\.ipynb/gm
-        const filenameMatch = id.match(filenameRegex)
         return {
-          id: filenameMatch ? filenameMatch[2] : ''
+          id: match[1]
         }
       },
       // Function to create a text block from an instance of this component
       toBlock: function (obj) {
-        return '{{ "' + obj.id + '" | notebook }}';
+        return '{{ "' + getFilename(obj.id) + '" | notebook }}';
       },
       // Preview output for this component. Can either be a string or a React component
       // (component gives better render performance)
       toPreview: function (obj) {
         return (
-          '<div style="background-color:#ccc; width: 100%; margin: 5ox 20px; padding: 15px 0;">Jupyter Notebook: ' + obj.id + '</div>'
+          '<div style="background-color:#ccc; width: 100%; margin: 5ox 20px; padding: 15px 0;">Jupyter Notebook: ' + getFilename(obj.id) + '</div>'
         );
       }
     });
