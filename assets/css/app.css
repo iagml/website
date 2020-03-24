@@ -258,6 +258,9 @@ footer a:hover {
 
 .post-content img {
   max-width: 100%;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .highlight {
