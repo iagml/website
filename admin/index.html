@@ -19,7 +19,7 @@
       // Fields the user need to fill out when adding an instance of the component
       fields: [{ name: 'id', label: 'Filename', widget: 'file' }],
       // Pattern to identify a block as being an instance of this component
-      pattern: /^{{\s*?"([\w-.]+)"\s*?\|\s*?\w+\s*?}}$/,
+      pattern: /^{{\s*?"([\w-.]*)"\s*?\|\s*?\w+\s*?}}$/,
       // Function to extract data elements from the regexp match
       fromBlock: function (match) {
         const id = match[1]
