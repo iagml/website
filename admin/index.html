@@ -22,6 +22,8 @@
       return filename
     }
 
+    CMS.registerPreviewStyle('/assets/css/cms-preview.css')
+
     CMS.registerEditorComponent({
       // Internal id of the component
       id: "jupyter_notebook",
@@ -48,8 +50,8 @@
       // (component gives better render performance)
       toPreview: function (obj) {
         return (
-          '<div style="background-color:#ccc; margin: 5px 5px; padding: 15px 15px; font-weight: bold;">'
-          + 'Your jupyter notebook ' + getFilename(obj.id) + ' will be rendered here'
+          '<div class="notebook">'
+          + 'Your jupyter notebook ' + getFilename(obj.id) + '<br>will be rendered here'
           + '</div>'
         );
       }
