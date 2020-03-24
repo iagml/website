@@ -69,6 +69,12 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Github Username', name: 'name', widget: 'string' }
-      - { label: 'Diplay Name', name: 'display_name', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Github Username'
+        name: 'name'
+        widget: 'string'
+      - label: 'Diplay Name'
+        name: 'display_name'
+        widget: 'string'
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
