@@ -256,6 +256,10 @@ footer a:hover {
   font-size: 1rem;
 }
 
+.post-content img {
+  max-width: 100%;
+}
+
 .highlight {
   font-size: 1rem;
   overflow-x: auto;
