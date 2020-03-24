@@ -77,4 +77,5 @@ collections:
         widget: 'string'
       - label: 'Description'
         name: 'body'
+        required: false
         widget: 'markdown'
