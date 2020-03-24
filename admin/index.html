@@ -31,10 +31,8 @@
 
         const filenameRegex = /(\/.*\/)(.*)\.ipynb/gm
         const filenameMatch = id.match(filenameRegex)
-        if (filenameMatch) {
-          return {
-            id: filenameMatch[2]
-          }
+        return {
+          id: filenameMatch ? filenameMatch[2] : ''
         }
       },
       // Function to create a text block from an instance of this component
