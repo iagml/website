@@ -12,6 +12,8 @@ All steps below are for passionate by terminal on **Linux** operational system. 
 
 **Git** is a distributed version-control system for tracking changes in source code during it development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity and support for distributed non-linear workflows.
 
+![github logo](https://github.githubassets.com/images/modules/open_graph/github-mark.png)
+
 ## Step 2 - Creating a GitHub account
 
 To start your experience on **GitHub** you need to make an account on: [https://github.com](https://github.com). You will just need to inform your `e-mail` account, choose an `username` and create a `password`.
