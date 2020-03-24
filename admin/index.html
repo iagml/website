@@ -19,7 +19,7 @@
       // Fields the user need to fill out when adding an instance of the component
       fields: [{ name: 'id', label: 'Filename', widget: 'file' }],
       // Pattern to identify a block as being an instance of this component
-      pattern: /^jupyter_notebook (\S+)$/,
+      pattern: /^{{\s*?"([\w-.]+)"\s*?\|\s*?\w+\s*?}}$/,
       // Function to extract data elements from the regexp match
       fromBlock: function (match) {
         const id = match[1]
@@ -31,13 +31,13 @@
       },
       // Function to create a text block from an instance of this component
       toBlock: function (obj) {
-        return 'jupyter_notebook ' + obj.id;
+        return '{{ "' + obj.id + '" | notebook }}';
       },
       // Preview output for this component. Can either be a string or a React component
       // (component gives better render performance)
       toPreview: function (obj) {
         return (
-          '{{ "' + obj.id + '" | notebook }}'
+          '<div style="background-color:#ccc; width: 100%; margin: 5ox 20px; padding: 15px 0;">Jupyter Notebook: ' + obj.id + '</div>'
         );
       }
     });
