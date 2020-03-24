@@ -30,14 +30,17 @@
       // Fields the user need to fill out when adding an instance of the component
       fields: [{ name: 'id', label: 'Filename', widget: 'file' }],
       // Pattern to identify a block as being an instance of this component
+      // From markdown to block
       pattern: /^{{\s*?"([\w-.]*)"\s*?\|\s*?\w+\s*?}}$/,
       // Function to extract data elements from the regexp match
+      // From markdown to block
       fromBlock: function (match) {
         return {
           id: '/assets/uploads/' + match[1] + '.ipynb'
         }
       },
       // Function to create a text block from an instance of this component
+      // From block to markdown
       toBlock: function (obj) {
         return '{{ "' + getFilename(obj.id) + '" | notebook }}';
       },
