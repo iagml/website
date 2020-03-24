@@ -45,7 +45,9 @@
       // (component gives better render performance)
       toPreview: function (obj) {
         return (
-          '<div style="background-color:#ccc; width: 100%; margin: 5px 20px; padding: 15px 0;">Jupyter Notebook: ' + getFilename(obj.id) + '</div>'
+          '<div style="background-color:#ccc; margin: 5px 5px; padding: 15px 15; font-weight: bold;">'
+          + 'Jupyter notebook ' + getFilename(obj.id) + ' will be rendered here'
+          + '</div>'
         );
       }
     });
