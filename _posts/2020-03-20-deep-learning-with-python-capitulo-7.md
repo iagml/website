@@ -2,7 +2,7 @@
 title: Deep Learning with Python, Chollet. Capítulo 7
 author: nmcardoso
 date: 2020-03-20
-image: /assets/img/chollet.png
+image: /assets/uploads/chollet.png
 ---
 
 Notebook com as anotações e experimentos da reunião quinzenal do grupo de machine learning apresentada no dia 20 de março de 2020.
