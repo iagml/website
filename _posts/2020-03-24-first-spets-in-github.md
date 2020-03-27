@@ -1,5 +1,5 @@
 ---
-title: First spets in GitHub
+title: First steps in GitHub
 date: 2020-03-24T14:27:57.449Z
 image: /assets/uploads/github-logo.png
 author: natalidesanti
