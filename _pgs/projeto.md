@@ -1,7 +1,7 @@
 ---
 title: O projeto
 layout: page
-image: https://clearskiesrbest.files.wordpress.com/2018/07/cropped-esoview1.jpg
+image: /assets/uploads/cropped-esoview1.jpg
 ---
 ## O projeto
 ---
