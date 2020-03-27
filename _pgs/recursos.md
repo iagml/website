@@ -1,7 +1,7 @@
 ---
 title: Recursos
 layout: page
-image: http://www.astro.iag.usp.br/~introDL/photos/Intro011.jpeg
+image: /assets/uploads/escola-avancada.jpeg
 ---
 
 ## Recursos
