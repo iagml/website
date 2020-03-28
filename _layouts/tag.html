@@ -8,7 +8,7 @@ layout: default
     <div class="col-lg-8">
       <h3 class="pb-4">TAG: {{ page.name }}</h3>
 
-      {% for post in site.tags[page.slug] %}
+      {% for post in site.tags[page.name] %}
       {% assign author = site.authors | where: 'name', post.author | first %}
       {% include simple_post_list_entry.html post=post author=author%}
       {% endfor %}
