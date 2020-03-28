@@ -1,0 +1,104 @@
+{% assign p = include.paginator %}
+
+<nav class="pt-5 pb-4">
+  <ul class="pagination justify-content-center">
+    {% if p.previous_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ p.previous_page_path }}">Previous</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    {% endif %}
+
+    {% assign aux = p.page | minus: 3 %}
+    {% if aux > 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', aux }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% elsif aux == 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: 'page:num', '' }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% endif %}
+
+    {% assign aux = p.page | minus: 2 %}
+    {% if aux > 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', aux }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% elsif aux == 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: 'page:num', '' }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% endif %}
+
+    {% assign aux = p.page | minus: 1 %}
+    {% if aux > 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', aux }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% elsif aux == 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: 'page:num', '' }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% endif %}
+
+    <!-- Current Page -->
+    <li class="page-item active">
+      <span class="page-link">
+        {{ p.page }}
+      </span>
+    </li>
+
+    {% assign aux = p.page | plus: 1 %}
+    {% if aux <= p.total_pages %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', aux }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% endif %}
+
+    {% assign aux = p.page | plus: 2 %}
+    {% if aux <= p.total_pages %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', aux }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% endif %}
+
+    {% assign aux = p.page | plus: 3 %}
+    {% if aux <= p.total_pages %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', aux }}">
+        {{ aux }}
+      </a>
+    </li>
+    {% endif %}
+
+    {% if p.next_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ p.next_page_path }}">Next</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link">Next</span>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
