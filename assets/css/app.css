@@ -286,3 +286,7 @@ a.post-author {
 a.post-author:hover {
   text-decoration: underline;
 }
+
+.page-link {
+  font-weight: bold;
+}
