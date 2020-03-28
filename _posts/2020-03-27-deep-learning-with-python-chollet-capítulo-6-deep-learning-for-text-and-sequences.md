@@ -5,6 +5,8 @@ title: >-
 date: 2020-03-27T16:53:22.424Z
 image: /assets/uploads/06fig14_alt.jpg
 author: pnovais
+tags:
+  - 'Deep Learning with Python, Chollet'
 ---
 Notebooks com os códigos e conceitos utilizados no Capítulo 6 do livro Deep Learning with Python (Chollet, 2018), para textos e sequências.
 
