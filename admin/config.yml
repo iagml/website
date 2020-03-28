@@ -33,6 +33,15 @@ collections:
         displayFields: [display_name]
         searchFields: [name, display_name]
         valueField: 'name'
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'relation'
+        collection: 'tagslist'
+        displayFields: [name]
+        searchFields: [name]
+        valueField: 'name'
+        default: []
+        multiple: true
       - label: 'Body'
         name: 'body' 
         widget: 'markdown'
@@ -81,3 +90,15 @@ collections:
         required: false
         hint: 'Short description about you, like social media links and qualification. Will be visible on your author page.'
         widget: 'markdown'
+  - name: 'tagslist'
+    label: 'Tags'
+    label_singular: 'Tag'
+    identifier_field: name
+    folder: '_tagslist/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - label: 'Tag Name'
+        name: name
+        widget: 'string'
