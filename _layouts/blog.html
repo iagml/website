@@ -4,6 +4,7 @@ layout: default
 
 <div class="container py-4">
   <div class="row">
+    <!-- Left Column-->
     <div class="col-lg-8" id="post-list">
       <h3>Últimas Postagens</h3>
 
@@ -13,8 +14,9 @@ layout: default
       {% endfor %}
 
       {% include paginator.html paginator=paginator %}
-
     </div>
+
+    <!-- Right Column -->
     <div class="col-lg-4">
       <h3 class="pb-3">Autores</h3>
       <ul class="list-unstyled">
