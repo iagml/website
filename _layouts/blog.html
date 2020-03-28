@@ -11,7 +11,7 @@ layout: default
       {% assign author = site.authors | where: 'name', post.author | first %}
       <div class="py-4">
         <a href="{{ post.url }}">
-          <div style="background-image: url({{ post.image }});" class="img post-hero">
+          <div style="background-image: url('{{ post.image }}');" class="img post-hero">
           </div>
           <h3 class="mt-3">{{ post.title }}</h3>
         </a>
