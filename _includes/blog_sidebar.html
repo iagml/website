@@ -1,0 +1,18 @@
+<h3 class="pb-3">Autores</h3>
+<ul class="list-unstyled">
+  {% for author in site.authors %}
+  {% assign count = site.posts | where: 'author', author.name | size %}
+  <li class="mt-3 d-flex align-items-center">
+    <a class="text-dark d-flex" href="/authors/{{ author.name }}">
+      <div class="d-inline-flex align-items-center">
+        <img src="https://github.com/{{ author.name }}.png?size=30" width="30" class="rounded-circle" />
+        <span class="pl-2">{{ author.display_name }}</span>
+      </div>
+    </a>
+    <span class="text-muted ml-1">&bullet; {{ count }} {{ count | pluralize: 'post', 'posts' }}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+<h3 class="pt-4 pb-3">Tags</h3>
+{% include render_tags.html %}
