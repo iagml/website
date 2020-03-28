@@ -4,7 +4,7 @@ layout: default
 
 <div class="container py-4">
   <div class="row">
-    <div class="col-md-8" id="post-list">
+    <div class="col-lg-8" id="post-list">
       <h3>Últimas Postagens</h3>
 
       {% for post in paginator.posts %}
@@ -15,7 +15,7 @@ layout: default
       {% include paginator.html paginator=paginator %}
 
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-4">
       <h3 class="pb-3">Autores</h3>
       <ul class="list-unstyled">
         {% for author in site.authors %}
