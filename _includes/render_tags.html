@@ -1,0 +1,7 @@
+<div>
+  {% for tag in site.tags %}
+  <a class="chip" href="/blog/tags/{{tag[0]}}">
+    <span>{{ tag[0] }}</span>
+  </a>
+  {% endfor %}
+</div>

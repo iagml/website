@@ -62,6 +62,13 @@ defaults:
     values:
       layout: "author"
       permalink: "/authors/:title/"
+  -
+    scope:
+      path: ""
+      type: "tagslist"
+    values:
+      layout: "tag"
+      permalink: "/blog/tags/:title/"
 
 include: ['_pages']
 
@@ -74,3 +81,6 @@ collections:
   authors:
     output: true
     layout: author
+  tagslist:
+    output: true
+    layout: tag

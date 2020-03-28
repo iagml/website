@@ -5,15 +5,14 @@ layout: default
 <div class="container py-4">
   <div class="row">
     <!-- Left Column-->
-    <div class="col-lg-8" id="post-list">
-      <h3>Últimas Postagens</h3>
+    <div class="col-lg-8">
+      <h3 class="pb-4">TAG: {{ page.name }}</h3>
 
-      {% for post in paginator.posts %}
+      {% for post in site.tags[page.slug] %}
       {% assign author = site.authors | where: 'name', post.author | first %}
-      {% include post_list_entry.html post=post author=author %}
+      {% include simple_post_list_entry.html post=post author=author%}
       {% endfor %}
 
-      {% include paginator.html paginator=paginator %}
     </div>
 
     <!-- Right Column -->
@@ -35,7 +34,6 @@ layout: default
       </ul>
 
       <h3 class="pt-4 pb-3">Tags</h3>
-      {% include render_tags.html %}
     </div>
   </div>
 </div>
