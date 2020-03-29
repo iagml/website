@@ -3,14 +3,14 @@
     <h2 class="text-center pb-3">Últimos Posts</h2>
     <div class="card-deck">
       {% for post in site.posts limit:3 %}
-      <div class="card">
-        <a href="{{ post.url }}">
-          <img class="card-img-top" src="{{ post.image }}" style="height: 12rem;" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <small class="text-muted">{{ post.date | date_to_string }}</small>
-          </div>
-        </a>
+      <div class="card" onclick="window.location='{{ post.url }}';">
+        <img class="card-img-top" src="{{ post.image }}" style="height: 12rem;" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{ post.date | date_to_string }}</small>
+        </div>
       </div>
       {% endfor %}
     </div>
