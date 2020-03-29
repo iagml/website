@@ -51,7 +51,7 @@ jobs:
     - name: Compile Jupyter Notebooks
       run: |
         echo `which jupyter`
-        jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
+        ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
 
     # Build
     - name: Build
