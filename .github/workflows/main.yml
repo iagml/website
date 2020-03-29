@@ -34,7 +34,6 @@ jobs:
 
     - name: Test
       run: |
-        echo `ls '~/.cache/pip'`
         echo $PATH
     
     # Pre-build
@@ -55,6 +54,7 @@ jobs:
 
     - name: Compile Jupyter Notebooks
       run: |
+        echo `which jupyter`
         jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
 
     # Build
