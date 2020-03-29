@@ -45,7 +45,7 @@ jobs:
     - name: Test
       run: |
         echo $PATH
-        sudo apt install tree
+        sudo apt update && sudo apt install tree
         tree ~/.cache/pip
 
     - name: Compile Jupyter Notebooks
