@@ -31,12 +31,6 @@ jobs:
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
-
-    - name: Test
-      run: |
-        echo $PATH
-        sudo apt install tree
-        tree /opt/hostedtoolcache/Python/3.8.2/x64/
     
     # Pre-build
     - name: Install Bundler
@@ -54,6 +48,12 @@ jobs:
         pip3 install -r requirements.txt
         echo `ls ~/.cache/pip`
         echo `ls ~/.cache/pip3`
+
+    - name: Test
+      run: |
+        echo $PATH
+        sudo apt install tree
+        tree /opt/hostedtoolcache/Python/3.8.2/x64/
 
     - name: Compile Jupyter Notebooks
       run: |
