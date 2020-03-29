@@ -38,7 +38,7 @@ jobs:
         bundle install --deployment
     
     - name: Install Python Dependencies
-      # if: steps.pipcache.outputs.cache-hit != 'true'
+      if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
         pip3 install -r requirements.txt -t ~/.cache/pip --upgrade
 
@@ -50,7 +50,6 @@ jobs:
 
     - name: Compile Jupyter Notebooks
       run: |
-        echo `which jupyter`
         export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
         ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
 
