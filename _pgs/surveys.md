@@ -4,10 +4,8 @@ layout: page
 image: /assets/img/splus-bg-lg.jpg
 ---
 
-## Surveys
+## Surveys: levantamentos de galáxias.
 ---
-
-Levantamentos de galáxias.
 
 O [J-PAS][j-pas], *Javalambre Physics of the Accelerating  Universe Astrophysical Survey* é uma colaboração híspano-brasileira que deve conduzir um levantamento fotométrico de ~8500 graus quadrados do céu com um sistema de 59 filtros (54 estreitos, com ~110Å  de largura cada, e 5 de banda larga), a partir de um observatório dedicado, o *Javalambre  Astrophysical Observatory* (JAO), em Teruel, Espanha, operado pelo CEFCA (*Centro de Estudios de Física del Cosmos de Aragón, Teruel*). O JAO conta com dois telescópios, um de 80cm, o T80-N, para calibração, e um de 2.5m, o T250, que conduzirá o levantamento propriamente dito. Este último estará equipado com uma câmera CCD de 1.2 Gpixel, com um campo de visão de 3 graus quadrados (a segunda maior do mundo em número de pixels, atrás apenas da usada no projeto Pan-Starrs). Diversos pesquisadores do Depto. de Astronomia do IAG participam do J-PAS. O *white paper* do projeto pode ser lido em Benítez et al. (2014, arXiv1403.5237).
 
