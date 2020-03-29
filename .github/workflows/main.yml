@@ -43,7 +43,7 @@ jobs:
         bundle install --deployment
     
     - name: Install Python Dependencies
-      # if: steps.pipcache.outputs.cache-hit != 'true'
+      if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
         pip install -r requirements.txt
 
