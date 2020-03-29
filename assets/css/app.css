@@ -20,6 +20,25 @@ table {
   width: 50% !important;
 }
 
+/* Sticky Footer: https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-wrapper {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+/* end */
+
 .nav-link {
   text-transform: uppercase;
   font-weight: 600;
