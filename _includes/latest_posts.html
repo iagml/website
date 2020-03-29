@@ -9,7 +9,12 @@
           <h5 class="card-title">{{ post.title }}</h5>
         </div>
         <div class="card-footer">
-          <small class="text-muted">{{ post.date | date_to_string }}</small>
+          {% assign author = site.authors | where: 'name', post.author | first %}
+          <img src="https://github.com/{{ author.name }}.png?size=40" width="40" class="rounded-circle" />
+          <div class="d-inline-block align-middle ml-2">
+            <span class="d-block">{{ author.display_name }}</span>
+            <small class="text-muted d-block">{{ post.date | date_to_string }}</small>
+          </div>
         </div>
       </div>
       {% endfor %}
