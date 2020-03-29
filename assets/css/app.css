@@ -159,13 +159,25 @@ header.masthead h1{
 
 .hero {
   background-color:#343a40;
-  background-image:url(/assets/img/splus-bg.png);
+  background-image:url('/assets/img/splus-bg-sm.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size:cover;
   background-attachment: fixed;
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('/assets/img/splus-bg-lg.jpg');
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero {
+    background-image: url('/assets/img/splus-bg-xxg.jpg');
+  }
 }
 
 .showcase .showcase-text{
