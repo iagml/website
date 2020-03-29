@@ -31,6 +31,11 @@ jobs:
       with:
         path: vendor/bundle
         key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
+
+    - name: Test
+      run: |
+        echo `ls '~/.cache/pip'`
+        echo $PATH
     
     # Pre-build
     - name: Install Bundler
