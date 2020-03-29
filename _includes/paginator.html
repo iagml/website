@@ -4,11 +4,11 @@
   <ul class="pagination justify-content-center">
     {% if p.previous_page %}
     <li class="page-item">
-      <a class="page-link" href="{{ p.previous_page_path }}">Previous</a>
+      <a class="page-link" href="{{ p.previous_page_path }}">Anterior</a>
     </li>
     {% else %}
     <li class="page-item disabled">
-      <span class="page-link">Previous</span>
+      <span class="page-link">Anterior</span>
     </li>
     {% endif %}
 
@@ -93,11 +93,11 @@
 
     {% if p.next_page %}
     <li class="page-item">
-      <a class="page-link" href="{{ p.next_page_path }}">Next</a>
+      <a class="page-link" href="{{ p.next_page_path }}">Próximo</a>
     </li>
     {% else %}
     <li class="page-item disabled">
-      <span class="page-link">Next</span>
+      <span class="page-link">Próximo</span>
     </li>
     {% endif %}
   </ul>
