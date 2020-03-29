@@ -18,7 +18,7 @@ jobs:
       id: pipcache
       with:
         path: '~/.cache/pip'
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
     # - uses: actions/cache@v1
@@ -43,13 +43,13 @@ jobs:
         bundle install --deployment
     
     - name: Install Python Dependencies
-      if: steps.pipcache.outputs.cache-hit != 'true'
+      # if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
-        pip install -r requirements.txt --user
+        pip install -r requirements.txt
 
     - name: Compile Jupyter Notebooks
       run: |
-        ~/.local/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
+        jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
 
     # Build
     - name: Build
