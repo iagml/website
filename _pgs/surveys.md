@@ -1,7 +1,7 @@
 ---
 title: Surveys
 layout: page
-image: /assets/img/splus-bg.png
+image: /assets/img/splus-bg-lg.jpg
 ---
 
 ## Surveys
