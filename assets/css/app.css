@@ -259,7 +259,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--secondary);
+  color: #c1c9d0;
 }
 
 #post-list a {
