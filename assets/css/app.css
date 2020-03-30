@@ -209,7 +209,7 @@ section.latest-posts .card:hover {
 }
 
 section.latest-posts .card:hover h5 {
-  color: var(--primary);
+  color: #075fbf;
 }
 
 section.latest-posts .card a {
