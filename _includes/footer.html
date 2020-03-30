@@ -54,8 +54,10 @@
   </div>
 
   <div class="container-fluid footer-line text-center">
-    <p>
-      &copy; 2019 IAG/USP
-    </p>
+    <small>
+      &copy; 2019-{{ 'now' | date: '%Y' }} <a href="http://www.iag.usp.br">IAG/USP</a> &bull;
+      Powered by <a href="https://jekyllrb.com/">Jekyll</a> &bull;
+      Last build: {{ 'now' | date: '%d/%m/%Y %H:%M:%S%z' }}
+    </small>
   </div>
 </footer>
