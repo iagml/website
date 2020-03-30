@@ -26,27 +26,27 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
     
     # Pre-build
-    - name: Install Bundler
+    - name: 'Ruby: Install Bundler'
       run: |
         gem install bundler -v '2.0.2'
 
-    - name: Install Dependencies
+    - name: 'Ruby: Install Dependencies'
       if: steps.gemcache.outputs.cache-hit != 'true'
       run: |
         bundle install --deployment
     
-    - name: Install Python Dependencies
+    - name: 'Python: Install Dependencies'
       if: steps.pipcache.outputs.cache-hit != 'true'
       run: |
         pip3 install -r requirements.txt -t ~/.cache/pip --upgrade
 
-    - name: Compile Jupyter Notebooks
+    - name: 'Jupyter Notebooks: Compile'
       run: |
         export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
         ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
 
     # Build
-    - name: Build
+    - name: 'Jekyll: Build'
       run: |
         export PATH=`pwd`/vendor/bundle/ruby/2.6.0/bin:$PATH
         export GEM_PATH=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_PATH
@@ -54,7 +54,7 @@ jobs:
         JEKYLL_ENV=production bundle exec jekyll build --destination site
     
     # Deploy to GH Pages
-    - name: Deploy
+    - name: 'Github Pages: Deploy'
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "Github Actions"
