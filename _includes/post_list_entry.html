@@ -2,7 +2,8 @@
 {% assign author = include.author %}
 <div class="py-4">
   <a href="{{ post.url }}">
-    <div style="background-image: url('{{ post.image }}');" class="img post-hero">
+    <div class="post-hero-container">
+      <div style="background-image: url('{{ post.image }}');" class="img post-hero"></div>
     </div>
     <h3 class="mt-3">{{ post.title }}</h3>
   </a>
