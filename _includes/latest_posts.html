@@ -4,7 +4,7 @@
     <div class="row row-cols-1 row-cols-lg-3">
       {% for post in site.posts limit:3 %}
       <div class="col p-4 p-lg-3 p-xg-4 d-flex justify-content-center">
-        <div class="card h-100" style="max-width: 450px;" onclick="window.location='{{ post.url }}';">
+        <div class="card w-100 h-100" style="max-width: 450px;" onclick="window.location='{{ post.url }}';">
           <img class="card-img-top" src="{{ post.image }}" style="height: 12rem;" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
