@@ -271,7 +271,7 @@ footer a:hover {
   transition: .3s ease-in-out;
 }
 
-#post-list a:hover {
+#post-list a:hover, #post-list a:focus {
   color: var(--primary);
 }
 
