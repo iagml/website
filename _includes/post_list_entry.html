@@ -10,16 +10,15 @@
   <p class="mt-0 mb-3">
     {{ post.excerpt | strip_html }}
   </p>
-  <div class="row">
-    <div class="col-8">
-      <spam class="text-90">
-        <i class=" far fa-user"></i> <a href="/authors/{{ post.author }}">{{ author.display_name }}</a>
-      </spam>
-    </div>
-    <div class="col-4 text-right">
-      <span class="pr-2 small">
-        <i class="far fa-calendar-alt"></i> {{ post.date | date_to_string }}
+  <div>
+    <a href="/authors/{{ post.author }}">
+      <img src="https://github.com/{{ author.name }}.png?size=40" width="40" class="rounded-circle" />
+    </a>
+    <div class="d-inline-block align-middle ml-2">
+      <span class="d-block">
+        <a href="/authors/{{ post.author }}">{{ author.display_name }}</a>
       </span>
+      <small class="text-muted d-block">{{ post.date | date_to_string }}</small>
     </div>
   </div>
 </div>
