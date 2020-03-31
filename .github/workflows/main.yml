@@ -47,8 +47,6 @@ jobs:
 
     # Build
     - name: 'Jekyll: Build'
-      env:
-        COMMIT_SHA: "${GITHUB_SHA}"
       run: |
         export PATH=`pwd`/vendor/bundle/ruby/2.6.0/bin:$PATH
         export GEM_PATH=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_PATH
