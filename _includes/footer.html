@@ -56,8 +56,14 @@
   <div class="container-fluid footer-line text-center">
     <small>
       &copy; 2019-{{ 'now' | date: '%Y' }} <a href="http://www.iag.usp.br">IAG/USP</a> &bull;
-      Powered by <a href="https://jekyllrb.com/">Jekyll</a> &bull;
-      Last build: {{ 'now' | date: '%d/%m/%Y %H:%M:%S%z' }}
+      Powered by <a href="https://jekyllrb.com/">Jekyll</a> <br />
+      Last build: {{ 'now' | date: '%d/%m/%Y %H:%M:%S' }}
+      {% assign commit_sha = site.env.COMMIT_SHA | default: '' %}
+      {% unless commit_sha == empty %}
+      &bull; Commit:
+      <a href="https://github.com/iagml/website/commit/{{ commit_sha}}">{{ commit_sha | slice: 0, 8 }}</a>
+      <a href="https://github.com/iagml/website"><i class="fab fa-github"></i></a>
+      {% endunless %}
     </small>
   </div>
 </footer>
