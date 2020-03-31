@@ -27,6 +27,13 @@
       return filename
     }
 
+    function getFilenameWithExtension(path) {
+      if (!path) return '';
+
+      const file = path.split('/').pop()
+      return file
+    }
+
     CMS.registerPreviewStyle('/assets/css/cms-preview.css')
 
     CMS.registerEditorComponent({
@@ -57,6 +64,35 @@
         return (
           '<div class="notebook">'
           + 'Your jupyter notebook ' + getFilename(obj.id) + '<br>will be rendered here'
+          + '</div>'
+        );
+      }
+    });
+
+    CMS.registerEditorComponent({
+      // Internal id of the component
+      id: "inline_pdf",
+      label: "PDF",
+      fields: [{ name: 'id', label: 'Filename', widget: 'file' }],
+      // Pattern to identify a block as being an instance of this component
+      // From markdown to block
+      pattern: /^{{\s*?"([\w-.]*)"\s*?\|\s*?pdf\s*?}}$/,
+      // Function to extract data elements from the regexp match
+      // From markdown to block
+      fromBlock: function (match) {
+        return {
+          id: '/assets/uploads/' + match[1]
+        }
+      },
+      // Function to create a text block from an instance of this component
+      // From block to markdown
+      toBlock: function (obj) {
+        return '{{ "' + getFilenameWithExtension(obj.id) + '" | pdf }}';
+      },
+      toPreview: function (obj) {
+        return (
+          '<div class="notebook">'
+          + 'Your pdf ' + getFilenameWithExtension(obj.id) + ' will be inserted here'
           + '</div>'
         );
       }
