@@ -42,6 +42,7 @@ collections:
         valueField: 'name'
         default: []
         multiple: true
+        required: false
       - label: 'Body'
         name: 'body' 
         widget: 'markdown'
