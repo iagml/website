@@ -58,7 +58,7 @@
       &copy; 2019-{{ 'now' | date: '%Y' }} <a href="http://www.iag.usp.br">IAG/USP</a> &bull;
       Powered by <a href="https://jekyllrb.com/">Jekyll</a> <br />
       Last build: {{ 'now' | date: '%d/%m/%Y %H:%M:%S' }}
-      {% assign commit_sha = site.env.COMMIT_SHA | default: '' %}
+      {% assign commit_sha = site.env.GITHUB_SHA | default: '' %}
       {% unless commit_sha == empty %}
       &bull; Commit:
       <a href="https://github.com/iagml/website/commit/{{ commit_sha}}">{{ commit_sha | slice: 0, 8 }}</a>
