@@ -38,7 +38,7 @@
       fields: [{ name: 'id', label: 'Filename', widget: 'file' }],
       // Pattern to identify a block as being an instance of this component
       // From markdown to block
-      pattern: /^{{\s*?"([\w-.]*)"\s*?\|\s*?\w+\s*?}}$/,
+      pattern: /^{{\s*?"([\w-.]*)"\s*?\|\s*?notebook\s*?}}$/,
       // Function to extract data elements from the regexp match
       // From markdown to block
       fromBlock: function (match) {
