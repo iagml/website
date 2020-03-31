@@ -240,6 +240,15 @@ footer .footer-line {
   padding: 1rem 0;
 }
 
+footer .footer-line a {
+  text-decoration: underline;
+}
+
+footer .footer-line a:hover,
+footer .footer-line a:focus {
+  text-decoration: none;
+}
+
 footer ul.footer-logos li {
   padding-right: .7rem;
 }
