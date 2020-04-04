@@ -396,3 +396,18 @@ a.post-author:hover {
 .chip:hover span {
   background-image: url('/assets/img/tag.svg');
 }
+
+.post-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.post-image-container .img {
+  background-color: #c5c5c5; /* fallback color */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%; 
+  height: 100%;
+}
