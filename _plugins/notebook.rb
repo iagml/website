@@ -10,7 +10,7 @@ module Jekyll
         output << ' style="width: 100%; border:none; overflow: auto;"></iframe>'
         output
       else
-        "<pre><code>Arquivo: \"#{input}\" não encontrado</code></pre>"
+        "<pre><code>Arquivo: \"#{input}.ipynb\" não encontrado</code></pre>"
       end
     end
   end
