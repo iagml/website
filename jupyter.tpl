@@ -52,6 +52,15 @@
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <!--link rel="stylesheet" href="custom.css"-->
 
+<style type="text/css">
+  #notebook {
+    padding-top: 10px;
+  }
+  .prompt{
+    min-width: 10ex;
+  }
+</style>
+
 <!-- Loading mathjax macro -->
 {{ mathjax() }}
 {%- endblock html_head -%}
