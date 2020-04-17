@@ -2,7 +2,7 @@
 
 {% if gh_user == nil or gh_user == "" %}
 {% assign hash = include.author.username | MD5 %}
-<img src="http://www.gravatar.com/avatar/{{ hash }}.jpg?s={{ include.size }}&d=identicon" class="rounded-circle"
+<img src="https://www.gravatar.com/avatar/{{ hash }}.jpg?s={{ include.size }}&d=identicon" class="rounded-circle"
   width="{{ include.size }}" />
 {% else %}
 <img src="https://github.com/{{ gh_user }}.png?size={{ include.size }}" class="rounded-circle"
