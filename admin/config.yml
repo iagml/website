@@ -31,8 +31,8 @@ collections:
         widget: 'relation'
         collection: 'authors'
         displayFields: [display_name]
-        searchFields: [name, display_name]
-        valueField: 'name'
+        searchFields: [username, display_name]
+        valueField: 'username'
       - label: 'Tags'
         name: 'tags'
         widget: 'relation'
