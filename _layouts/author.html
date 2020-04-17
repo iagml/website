@@ -41,8 +41,11 @@ layout: default
     {% endfor %}
   </ul>
 
+  {% if page.github_username != "" and page.github_username != nil %}
   <h4 class="mt-5 mb-3">Redes</h4>
   <p class="ml-3">
-    <a class="text-dark" href="https://github.com/{{ page.name }}"><i class="fab fa-github mr-2"></i>Github</a>
+    <a class="text-dark" href="https://github.com/{{ page.github_username }}"><i
+        class="fab fa-github mr-2"></i>Github</a>
   </p>
+  {% endif %}
 </div>
