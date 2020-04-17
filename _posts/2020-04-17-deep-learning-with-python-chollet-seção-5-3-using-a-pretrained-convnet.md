@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning with Python, Chollet. Seção 5.13: Using a pretrained convnet"
+title: "Deep Learning with Python, Chollet. Seção 5.3: Using a pretrained convnet"
 date: 2020-04-17T21:55:38.731Z
 image: /assets/uploads/chollet.png
 author: nmcardoso
