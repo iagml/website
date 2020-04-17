@@ -8,6 +8,8 @@ tags:
   - 'Deep Learning with Python, Chollet'
 ---
 
-Notebook com as anotações e experimentos da reunião quinzenal do grupo de machine learning apresentada no dia 20 de março de 2020.
+Notebook com as anotações da reunião quinzenal do grupo de machine learning apresentada no dia 20 de março de 2020.
+
+O capítulo aborda o uso avançado do Keras, como uso dos callbacks durante o treinamento, boas práticas de deep learning e módulos inception.
 
 {{ "chollet_7" | notebook }}
