@@ -33,7 +33,7 @@ layout: default
 
   <h4 class="mt-3 mb-3">Artigos</h4>
   <ul>
-    {% assign filtered_posts = site.posts | where: 'author', page.name %}
+    {% assign filtered_posts = site.posts | where: 'author', page.username %}
     {% for post in filtered_posts %}
     <li>
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> &mdash; {{ post.date | date_to_string }}

@@ -11,7 +11,7 @@ layout: default
       <h3>Últimas Postagens</h3>
 
       {% for post in paginator.posts %}
-      {% assign author = site.authors | where: 'name', post.author | first %}
+      {% assign author = site.authors | where: 'username', post.author | first %}
       {% include post_list_entry.html post=post author=author %}
       {% endfor %}
 
