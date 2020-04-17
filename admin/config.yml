@@ -80,12 +80,19 @@ collections:
     editor:
       preview: false
     fields:
-      - label: 'Github Username'
-        name: 'name'
+      - label: 'IAGML Username'
+        name: 'username'
         widget: 'string'
+        hint: "The name used to identify you on the site. Use the same username as github if you have an account or create a new one if you don't. Don't use space, punctuation or special characters"
+      - label: 'Github Username'
+        name: 'github_username'
+        widget: 'string'
+        required: false
+        hint: 'Your github username.'
       - label: 'Diplay Name'
         name: 'display_name'
         widget: 'string'
+        hint: 'The name that will be shown to readers of the site.'
       - label: 'Description'
         name: 'body'
         required: false

@@ -10,8 +10,7 @@ layout: default
       <div class="col-xl-9">
         <div class="row d-flex align-items-center">
           <div class="col-lg-3 d-flex">
-            <img class="rounded-circle mx-auto" src="https://github.com/{{ page.name }}.png?size=150" width="150"
-              alt="{{ page.display_name }}">
+            {% include profile_pic.html author=page size=150 %}
           </div>
           <div class="col-lg-9 pt-5 pt-lg-0 text-center text-lg-left">
             <span class="w-600 text-uppercase"
@@ -34,7 +33,7 @@ layout: default
 
   <h4 class="mt-3 mb-3">Artigos</h4>
   <ul>
-    {% assign filtered_posts = site.posts | where: 'author', page.name %}
+    {% assign filtered_posts = site.posts | where: 'author', page.username %}
     {% for post in filtered_posts %}
     <li>
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> &mdash; {{ post.date | date_to_string }}
@@ -42,8 +41,11 @@ layout: default
     {% endfor %}
   </ul>
 
+  {% if page.github_username != "" and page.github_username != nil %}
   <h4 class="mt-5 mb-3">Redes</h4>
   <p class="ml-3">
-    <a class="text-dark" href="https://github.com/{{ page.name }}"><i class="fab fa-github mr-2"></i>Github</a>
+    <a class="text-dark" href="https://github.com/{{ page.github_username }}"><i
+        class="fab fa-github mr-2"></i>Github</a>
   </p>
+  {% endif %}
 </div>
