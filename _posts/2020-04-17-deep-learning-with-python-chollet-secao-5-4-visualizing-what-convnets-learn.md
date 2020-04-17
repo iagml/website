@@ -12,7 +12,7 @@ Seção 4, *Visualizing what convnets learn*, do capítulo 5, *Deep Learning for
 
 Nesta seção, o tema abordado foi técnicas de visualização do que é aprendido por uma rede neural convolucional, que é uma das formas de inspecionar o aprendizado do modelo. É possível visualizar quais filtros ou quais partes das imagens têm mais influência no resultado final da classificação.
 
-<!-- more -->
+<!--more-->
 
 {{ "chollet_5_4.pdf" | pdf }}
 
