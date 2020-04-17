@@ -10,8 +10,7 @@ layout: default
       <div class="col-xl-9">
         <div class="row d-flex align-items-center">
           <div class="col-lg-3 d-flex">
-            <img class="rounded-circle mx-auto" src="https://github.com/{{ page.name }}.png?size=150" width="150"
-              alt="{{ page.display_name }}">
+            {% include profile_pic.html author=page size=150 %}
           </div>
           <div class="col-lg-9 pt-5 pt-lg-0 text-center text-lg-left">
             <span class="w-600 text-uppercase"

@@ -12,7 +12,7 @@
   </p>
   <div>
     <a href="/authors/{{ post.author }}">
-      <img src="https://github.com/{{ author.name }}.png?size=40" width="40" class="rounded-circle" />
+      {% include profile_pic.html author=author size=40 %}
     </a>
     <div class="d-inline-block align-middle ml-2">
       <span class="d-block">

@@ -5,7 +5,7 @@
   <li class="mt-3 d-flex align-items-center">
     <a class="text-dark d-flex" href="/authors/{{ author.name }}">
       <div class="d-inline-flex align-items-center">
-        <img src="https://github.com/{{ author.name }}.png?size=30" width="30" class="rounded-circle" />
+        {% include profile_pic.html author=author size=30 %}
         <span class="pl-2">{{ author.display_name }}</span>
       </div>
     </a>
