@@ -7,8 +7,9 @@ module Jekyll
         output << " frameborder='0' class='my-2' "
         output << ' style="border: none;">'
         output << "</iframe>"
+        output
       else
-        output = "Arquivo não encontrado: #{input}"
+        "Arquivo não encontrado: #{input}"
       end
     end
   end
