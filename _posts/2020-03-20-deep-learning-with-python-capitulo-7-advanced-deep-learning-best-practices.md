@@ -1,6 +1,5 @@
 ---
-title: "Deep Learning with Python, Chollet. Capítulo 7: Advanced deep-learning
-best practices"
+title: "Deep Learning with Python, Chollet. Capítulo 7: Advanced deep-learning best practices"
 date: 2020-03-20T00:00:00.000Z
 image: /assets/uploads/chollet.png
 author: nmcardoso
