@@ -1,0 +1,51 @@
+name: Jekyll (Pull Request)
+
+on: pull_request
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6.x'
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - uses: actions/cache@v1
+      id: pipcache
+      with:
+        path: '~/.cache/pip'
+        key: ${{ runner.os }}-pip3-${{ hashFiles('requirements.txt') }}
+    - uses: actions/cache@v1
+      id: gemcache
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
+    
+    # Pre-build
+    - name: 'Ruby: Install Bundler'
+      run: |
+        gem install bundler -v '2.0.2'
+    - name: 'Ruby: Install Dependencies'
+      if: steps.gemcache.outputs.cache-hit != 'true'
+      run: |
+        bundle install --deployment
+    
+    - name: 'Python: Install Dependencies'
+      if: steps.pipcache.outputs.cache-hit != 'true'
+      run: |
+        pip3 install -r requirements.txt -t ~/.cache/pip --upgrade
+    - name: 'Jupyter Notebooks: Compile'
+      run: |
+        export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
+        ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
+    # Build
+    - name: 'Jekyll: Build'
+      run: |
+        export PATH=`pwd`/vendor/bundle/ruby/2.6.0/bin:$PATH
+        export GEM_PATH=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_PATH
+        export GEM_HOME=`pwd`/vendor/bundle/ruby/2.6.0:$GEM_HOME
+        JEKYLL_ENV=production bundle exec jekyll build --destination site
