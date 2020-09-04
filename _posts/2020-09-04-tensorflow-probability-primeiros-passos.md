@@ -6,6 +6,9 @@ author: erikvini
 tags:
   - Deep Learning
   - Jupyter Notebook
+  - Probability
+  - Variational Autoencoder
+  - Regression
 ---
 Este post se refere à apresentação do dia 04/09/2020, sobre o Tensorflow Probability
 
