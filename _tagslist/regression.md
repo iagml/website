@@ -1,3 +1,3 @@
 ---
-name: Variational Autoencoder
+name: Probability
 ---
