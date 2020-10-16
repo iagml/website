@@ -9,6 +9,4 @@ tags:
 ---
 In this post you will see an example of an **image denoising**, using an *autoencoders.*
 
-
-
 {{ "image_denoising" | notebook }}
