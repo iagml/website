@@ -46,6 +46,7 @@ jobs:
     - name: 'Jupyter Notebooks: Compile'
       run: |
         export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
+        export JUPYTER_DATA_DIR=/home/runner/.cache/pip/share/jupyter
         ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template lab assets/uploads/*.ipynb
 
     # Build
