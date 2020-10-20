@@ -41,7 +41,7 @@ jobs:
     - name: 'Jupyter Notebooks: Compile'
       run: |
         export PYTHONPATH=$PYTHONPATH:/home/runner/.cache/pip/
-        ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template jupyter.tpl assets/uploads/*.ipynb
+        ~/.cache/pip/bin/jupyter nbconvert --output-dir='./notebooks' --to html --template lab assets/uploads/*.ipynb
     # Build
     - name: 'Jekyll: Build'
       run: |
